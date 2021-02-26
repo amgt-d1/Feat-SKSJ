@@ -111,5 +111,5 @@ jaccard /= objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.
 - Dice similarity: jaccard /= (objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size());
 
 ### Note
-- This code is owned by my former master student Shohei Tsuruoka.
+- This code is owned by one of my former master students Shohei Tsuruoka.
 - If you have questions, contact `tsuruoka.shohei@ist.osaka-u.ac.jp`.
