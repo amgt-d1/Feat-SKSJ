@@ -50,7 +50,7 @@ command:
 - NODE_MAX: The maximum number of objects contained in one leaf node. 
 - L: The number of leaf nodes for similarity calclation in Init Threshold Calclation．
 
-### Setting of Dataset
+### Dataset setting
 ```
 //proposed.cpp baseline.cpp lenear.cpp
 
@@ -60,7 +60,7 @@ set_data(objects2);	//Twitter
 - Twitter: set_data(objects2);
 - Places: set_data_place(objects2);
 
-### Change textual similarity
+### Textual similarity setting
 Change "score" in calc_textual_score (RTree.cpp line 23)
 ```
 //RTree.cpp line 23
@@ -109,3 +109,7 @@ jaccard /= objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.
 - Jaccard similarity: jaccard /= objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size() - num_share_key;
 - Cosine similarity: jaccard /= sqrt(objects[itr->second.data_id[i] - 1].key.size() * objects[itr->second.data_id[j] - 1].key.size());
 - Dice similarity: jaccard /= (objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size());
+
+### Note
+- This code is owned by my former master student Shohei Tsuruoka.
+- If you have questions, contact `tsuruoka.shohei@ist.osaka-u.ac.jp`.
