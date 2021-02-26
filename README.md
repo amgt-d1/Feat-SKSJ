@@ -37,7 +37,7 @@ command:
 ## How to tune parameters
 ### Set each parameter in class.h
 ```
-//class.h  line 23
+// class.h  line 23
 #define TOP_K 100
 #define num 1000000
 #define alpha 0.5
@@ -52,10 +52,10 @@ command:
 
 ### Dataset setting
 ```
-//proposed.cpp baseline.cpp lenear.cpp
+// proposed.cpp baseline.cpp lenear.cpp
 
 set_data(objects2);	//Twitter
-//set_data_place(objects2);	//Place
+// set_data_place(objects2);	//Place
 ```
 - Twitter: set_data(objects2);
 - Places: set_data_place(objects2);
@@ -63,7 +63,7 @@ set_data(objects2);	//Twitter
 ### Textual similarity setting
 Change "score" in calc_textual_score (RTree.cpp line 23)
 ```
-//RTree.cpp line 23
+// RTree.cpp line 23
 value_type calc_textual_score(Data z1, Data z2)
 {
     value_type score;
@@ -101,10 +101,10 @@ value_type calc_textual_score(Data z1, Data z2)
 
 When executing the proposed method, change "jaccard" on proposed.cpp line 192 to 194
 ```
-//proposed.cpp line 192
+// proposed.cpp line 192
 jaccard /= objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size() - num_share_key; //Jaccard
-//jaccard /= sqrt(objects[itr->second.data_id[i] - 1].key.size() * objects[itr->second.data_id[j] - 1].key.size());	//Cosine
-//jaccard /= (objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size());	//Dice
+// jaccard /= sqrt(objects[itr->second.data_id[i] - 1].key.size() * objects[itr->second.data_id[j] - 1].key.size());	//Cosine
+// jaccard /= (objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size());	//Dice
 ```
 - Jaccard similarity: jaccard /= objects[itr->second.data_id[i] - 1].key.size() + objects[itr->second.data_id[j] - 1].key.size() - num_share_key;
 - Cosine similarity: jaccard /= sqrt(objects[itr->second.data_id[i] - 1].key.size() * objects[itr->second.data_id[j] - 1].key.size());
